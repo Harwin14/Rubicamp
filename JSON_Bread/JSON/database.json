@@ -1,0 +1,37 @@
+[
+   {
+      "string": "Testing Data",
+      "integer": "12",
+      "float": "1.45",
+      "date": "2017-12-12",
+      "boolean": "True"
+   },
+   {
+      "string": "Coba lagi",
+      "integer": "99",
+      "float": "100.405",
+      "date": "2017-11-20",
+      "boolean": "False"
+   },
+   {
+      "string": "aa",
+      "integer": "11",
+      "float": "11",
+      "date": "2022-10-25",
+      "boolean": "True"
+   },
+   {
+      "string": "11",
+      "integer": "11",
+      "float": "11",
+      "date": "2022-10-11",
+      "boolean": "True"
+   },
+   {
+      "string": "acdavc",
+      "integer": "2312",
+      "float": "13144.15",
+      "date": "2022-10-04",
+      "boolean": "True"
+   }
+]

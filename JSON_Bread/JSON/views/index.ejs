@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>JSON-Bread</title>
+  
+</head>
+
+<body class="BG">
+    <div class="container">
+        <h1>BREAD(Browse, Read, Edit, Add, Delete)</h1>
+        <div>
+            <div class="filter">
+                <h2>Filters</h2>
+            </div>
+            <!-- =================FORM================= -->
+            <form action=" " method="post">
+                <div>
+                    <input class="id" type="checkbox" id="ID" name="ID">
+                    <label for="ID">ID</label>
+                </div>
+                <div>
+                    <input class="input" type="text" placeholder=" ID ">
+                </div>
+                <div>
+                    <input class="id" type="checkbox" id="String" name="String">
+                    <label for="String">String</label>
+                </div>
+                <div>
+                    <input class="input" type="text" placeholder=" String ">
+                </div>
+                <div>
+                    <input class="id" type="checkbox" id="integer" name="Integer">
+                    <label for="Integer">Integer</label>
+                </div>
+                <div>
+                    <input class="input" type="text" placeholder=" Integer " id="integer" name="Integer">
+                </div>
+                <div>
+                    <input class="id" type="checkbox" id="Float" name="Float">
+                    <label for="Float">Float</label>
+                </div>
+                <div>
+                    <input class="input" type="text" placeholder="Float">
+                </div>
+                <div>
+                    <input class="id" type="checkbox" id="Date" name="Date">
+                    <label for="Date">date</label>
+                </div>
+                <div>
+                    <input class="input-date1" type="text" placeholder="start date">
+                </div>
+                <p class="to">to</p>
+                <div>
+                    <input class="input-date2" type="text" placeholder="end date">
+                </div>
+                <div class="id-boole">
+                    <input type="checkbox" id="Boolean" name="Boolean">
+                    <label for="Boolean" placeholder="Choose Boolean">Boolean</label>
+                </div>
+                <div>
+                    <select class="input-boole" id="boolean" name="boolean">
+                        <option selected> Choose Boolean...</option>
+                        <option value="False">False</option>
+                        <option value="True">True</option>
+                    </select><br>
+                </div>
+        </div>
+    </div>
+    <div class="tombol-luar-search">
+        <button class="tombol" type="submit">SEARCH</button>
+    </div>
+    </form>
+    <!-- =============tabel================== -->
+    <div>
+        <table class="table">
+            <thead class="table-h">
+                <tr>
+                    <th>ID</th>
+                    <th>String</th>
+                    <th>Integer</th>
+                    <th>Float</th>
+                    <th>Date</th>
+                    <th>Boolean</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody class="table-b">
+                <% data.forEach((item, index)=> { %>
+                    <tr>
+                        <div class="kotak">
+                            <td style="padding-left: 10px;">
+                                <%= index+1 %>
+                            </td>
+                            <td>
+                                <%= item.string %>
+                            </td>
+                            <td>
+                                <%= item.integer %>
+                            </td>
+                            <td>
+                                <%= item.float %>
+                            </td>
+                            <td>
+                                <%= item.date %>
+                            </td>
+                            <td>
+                                <%= item.boolean %>
+                            </td>
+                            <td>
+                                <a href="/edit/<%= index %>"><button class="tombol-edit"> EDIT </button></a>
+                                <a href="/delete/<%= index %>"  <a href="delete_methode_link" onclick="return confirm('Are you sure you want to Remove?');">
+                
+                                <button class="tombol-delete"> DELETE </button></a>
+                            </td>
+                        </div>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+    <div class="tombol-page">
+        <button type="button" class="tombol-add-page">Previous</a></button>
+        <button type="button" class="tombol-add-page">Next</a></button>
+    </div>
+    <div class="tombol-luar">
+        <button type="button" class="tombol-add"> <a href="/add">ADD</a></button>
+    </div>
+</body>
+
+</html>

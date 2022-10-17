@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body style=background-color:rgb(157,211,245);>
+    <div class="container">
+        <h1>Edit Data</h1>
+        <form action=" " method="post">
+            <div class="edit">
+                <label class="id-edit" for="id">ID</label>
+            </div>
+            <input class="input-edit-disable" type="text" name="id" id="id" value="<%= index+1 %>" disabled> <br>
+            
+            <div class="edit">
+                <label class="id-edit" for="string">String</label>
+            </div>
+            <input class="input-edit" type="text" name="string" id="string" value="<%= item.string %>"><br>
+
+            <div class="edit">
+                <label class="id-edit" for="integer">Integer</label>
+            </div>
+            <input class="input-edit" type="number" name="integer" id="integer" value="<%= item.integer %>"><br>
+
+            <div class="edit">
+                <label class="id-edit" for="float">Float</label>
+            </div>
+            <input class="input-edit" type="number" step="0.005" name="float" id="float" value="<%= item.float %>"><br>
+
+            <div class="edit">
+                <label class="id-edit" for="date">Date</label>
+            </div>
+            <input class="input-edit" type="date" name="date" id="date" value="<%= item.date %>"><br>
+
+            <div class="edit">
+                <label class="id-edit" for="boolean">Boolean</label>
+            </div>
+            <select class="input-boole-edit" name="boolean" id="boolean" ">
+                    <option disabled selected> <%=item.boolean%></option>
+                    <option value=" True">True</option>
+                <option value="False">False</option>
+            </select>
+    </div>
+
+    <div> <button type="submit" class="tombol-update"><a href="/add"></a>UPDATE</button> </div>
+
+    </form>
+    </div>
+</body>
+
+</html>

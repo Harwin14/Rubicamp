@@ -1,0 +1,266 @@
+.container {
+  background-color: rgb(157, 211, 245);
+  font-family: Arial;
+  font-size: 20;
+  margin: 2% 35% 1% 20%;
+}
+
+.BG {
+  background-color: rgb(157, 211, 245)
+}
+
+.filter {
+  margin: -2% 0%;
+}
+
+.id {
+  margin: 0% 0% -1%;
+  cursor: pointer;
+}
+
+.id-edit {
+  width: 100%
+}
+
+.id-boole {
+  margin: 2% 0% 1%;
+  width: 10%;
+}
+
+.input {
+  width: 69%;
+  background-color: rgb(184, 241, 248);
+  position: relative;
+  left: 20%;
+  top: -25px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.input-edit {
+  width: 77%;
+  height: 22px;
+  background-color: rgb(184, 241, 248);
+  position: relative;
+  left: 20%;
+  top: -39px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.input-edit-disable {
+  width: 77%;
+  height: 22px;
+  background-color: rgb(167, 189, 189);
+  position: relative;
+  left: 20%;
+  top: -39px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.input-date1 {
+  width: 20%;
+  background-color: rgb(184, 241, 248);
+  position: relative;
+  left: 21%;
+  top: -27px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.input-date2 {
+  width: 20%;
+  background-color: rgb(184, 241, 248);
+  position: relative;
+  left: 21%;
+  top: -2px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.input-boole {
+  width: 72%;
+  background-color: rgb(184, 241, 248);
+  position: relative;
+  left: 20%;
+  top: -35px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.input-boole-edit {
+  width: 79.8%;
+  height: 39px;
+  background-color: rgb(184, 241, 248);
+  position: relative;
+  left: 20%;
+  top: -39px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.box {
+  width: 69%;
+  background-color: rgb(184, 241, 248);
+  position: relative;
+  left: 20%;
+  top: -25px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.box2 {
+  width: 69%;
+  background-color: rgb(204, 23, 62);
+  position: relative;
+  left: 15%;
+  top: 5px;
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.to {
+  margin: -3% 0% 1% 22%;
+}
+
+.tombol {
+  background-color: #174685;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 8px 11px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  float: left;
+}
+
+.tombol-luar {
+  margin: 0% -2%;
+  width: 81%;
+  float: inline-end;
+  
+}
+
+.tombol-page {
+  margin: 0% -2%;
+  width: 81%;
+  float: inline-end;
+  border-radius: 2px;
+}
+
+.tombol-add-page {
+  background-color: rgb(203, 240, 247);
+  border: black;
+  border-radius: 1px;
+  color: #113c75;
+  padding: 8px 11px;
+  margin: 4px 2px;
+  cursor: pointer;
+  float: left;
+}
+
+.tombol-luar-search {
+  margin: -3% -2%;
+  width: 81%;
+  float: inline-end;
+
+}
+
+.tombol-edit {
+  background-color: #139734;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 11px;
+  text-decoration: none;
+  margin: 0%;
+  cursor: pointer;
+  float: left;
+}
+
+.tombol-delete {
+  background-color: #e71515;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 11px;
+  text-decoration: none;
+  margin: 1px 2px;
+  cursor: pointer;
+  float: left;
+}
+
+.tombol-add {
+  background-color: #174685;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 11px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  float: left;
+}
+
+.tombol-update {
+  background-color: #174685;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 11px;
+  text-decoration: none;
+  margin: -2% 21%;
+  cursor: pointer;
+  float: left;
+}
+
+.tombol-save {
+  background-color: #174685;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 11px;
+  text-decoration: none;
+  margin: -2% 21% 0% 3%;
+  cursor: pointer;
+  float: left;
+}
+
+.table {
+  width: 42%;
+  border-collapse: collapse;
+  margin: 0% 20%;
+  font-family: arial;
+  height: 300px;
+}
+
+.table th {
+  background-color: rgb(188, 240, 247);
+  border: 1px unline rgb(115, 213, 243);
+  padding: 10px 10px 10px 5px;
+  text-align: left;
+  height: 20px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #699e9e;
+}
+
+.edit {
+  padding: 10px 10px;
+  margin: -1px;
+}
+
+.tombol-add-edit {
+  background-color: #174685;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  padding: 8px 11px;
+  text-decoration: none;
+  margin-left: 21%;
+  margin-top: -2%;
+  float: left;
+}
