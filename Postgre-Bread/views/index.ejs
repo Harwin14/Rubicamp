@@ -1,0 +1,222 @@
+<%- include('partials/header') %>
+
+
+    <div>
+        <form action="" method="get">
+            <h1>BREAD(Browse, Read, Edit, Add, Delete)</h1>
+            <div>
+                <h2>Filters</h2>
+            </div>
+            <!-- =================FORM================= -->
+
+            <input type="hidden" name="page" value="1">
+            <div>
+
+                <!-- ==========ID========= -->
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-form-label">
+                        <input name="idFilters" type="checkbox" id="filters" <%=query.idFilters=='on' ? 'checked' : ''
+                            %>>
+                        <label for="idFilter">ID</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" name="id" type="text" placeholder=" ID " value="<%= query.id %>">
+                    </div>
+                </div>
+
+
+                <!-- =========STRING========= -->
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-form-label">
+                        <input name="stringFilters" type="checkbox" id="filters" <%=query.stringFilters=='on'
+                            ? 'checked' : '' %>>
+                        <label for="string">String</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" name="string" type="text" placeholder=" String "
+                            value="<%= query.string %>">
+                    </div>
+                </div>
+                <!-- ==========INTEGER========= -->
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-form-label">
+                        <input name="integerFilters" type="checkbox" id="filters" <%=query.integerFilters=='on'
+                            ? 'checked' : '' %>>
+                        <label for="integer">Integer</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" name="integer" type="number" placeholder=" Integer " id="integer"
+                            value="<%= query.integer %>">
+                    </div>
+                </div>
+                <!--============FLOAT============= -->
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-form-label">
+                        <input name="floatFilters" type="checkbox" <%=query.floatFilters=='on' ? 'checked' : '' %>>
+                        <label for="float">Float</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input class="form-control" name="float" type="number" step="0.05" placeholder="Float"
+                            value="<%= query.float %>">
+                    </div>
+                </div>
+                <!-- ============DATE============ -->
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-form-label">
+                        <input name="dateFilters" type="checkbox" <%=query.dateFilters=='on' ? 'checked' : '' %>>
+                        <label for="date">date</label>
+                    </div>
+                    <div class="col-sm-3">
+                        <div>
+                            <input class="form-control" name="startDate" type="date" placeholder="start date"
+                                value="<%= query.startDate %>">
+                            to
+                            <input class="form-control" name="endDate" type="date" placeholder="end date"
+                                value="<%= query.endDate%>">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===========BOOLEAN============= -->
+                <div class="row mb-3">
+                    <div class="col-sm-2 col-form-label">
+                        <input name="booleanFilters" type="checkbox" <%=query.booleanFilters=='on' ? 'checked' : '' %>>
+                        <label for="boolean">Boolean</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <select class="form-control" class="input" name="boolean" id="filters">
+                            <option value="" selected disabled> Choose the Boolean...</option>
+                            <option value="true" <%=query.boolean=='true' ? 'selected' : '' %>>true</option>
+                            <option value="false" <%=query.boolean=='false' ? 'selected' : '' %>>false</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                    <button class="btn btn-warning" type="submit" href="/">Reset</button>
+                </div>
+
+        </form>
+
+
+
+
+
+        <!-- =============tabel================== -->
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            <a href="/?page=1<%= sortBy == 'id' && order == 'asc' ? '&sortBy=id&order=desc' : '&sortBy=id&order=asc' %>"
+                                style="text-decoration:none; color: black;" <% if(sortBy=='id' && order=='asc' ){ %>
+                                <i class="fa-solid fa-sort-up"></i <% } else if (sortBy=='id' && order=='desc' ){ %> 
+                                <i class="fa-solid fa-sort-down"></i <% } else { %> 
+                                <i class="fa-solid fa-sort"></i <% } %>> ID
+                            </a>
+                        </th>
+
+                        <th>
+                            <a href="/?page=1<%= sortBy == 'string' && order == 'asc' ? '&sortBy=string&order=desc' : '&sortBy=string&order=asc' %>"
+                                style="text-decoration:none; color: black;" <% if(sortBy=='string' && order=='asc' ) {%>
+                                <i class="fa-solid fa-sort-up"></i <% } else if (sortBy=='string' && order=='desc' ){ %>
+                                <i class="fa-solid fa-sort-down"></i <% } else { %> 
+                                <i class="fa-solid fa-sort"></i <% } %>>String
+                            </a>
+                        </th>
+
+                        <th> <a href="/?page=1<%= sortBy == 'integer' && order == 'asc' ? '&sortBy=integer&order=desc' : '&sortBy=integer&order=asc' %>"
+                                style="text-decoration:none; color: black;" <% if(sortBy=='integer' && order=='asc' ) {%>
+                                <i class="fa-solid fa-sort-up"></i <% } else if (sortBy=='integer' && order=='desc' ){ %>
+                                <i class="fa-solid fa-sort-down"></i <% } else { %> 
+                                <i class="fa-solid fa-sort"></i <% } %>>Integer
+                            </a>
+                        </th>
+                        <th>
+                            <a href="/?page=1<%= sortBy == 'float' && order == 'asc' ? '&sortBy=float&order=desc' : '&sortBy=float&order=asc' %>"
+                                style="text-decoration:none; color: black;" <% if(sortBy=='float' && order=='asc' ) { %>
+                                <i class="fa-solid fa-sort-up"></i <% } else if (sortBy=='float' && order=='desc' ){ %> 
+                                <i class="fa-solid fa-sort-down"></i <% } else { %> 
+                                <i class="fa-solid fa-sort"></i <% } %>>Float
+                            </a>
+                        </th>
+                        <th>
+                            <a href="/?page=1<%= sortBy == 'date' && order == 'asc' ? '&sortBy=date&order=desc' : '&sortBy=date&order=asc' %>"
+                                style="text-decoration:none; color: black;" <% if(sortBy=='date' && order=='asc' ) { %>
+                                <i class="fa-solid fa-sort-up"></i <% } else if (sortBy=='date' && order=='desc' ){ %> 
+                                <i class="fa-solid fa-sort-down"></i <% } else { %> 
+                                <i class="fa-solid fa-sort"></i <% } %>>Date
+                            </a>
+                        </th>
+                        <th> 
+                            <a href="/?page=1<%= sortBy == 'boolean' && order == 'asc' ? '&sortBy=boolean&order=desc' : '&sortBy=boolean&order=asc' %>"
+                                style="text-decoration:none; color: black;" <% if(sortBy=='boolean' && order=='asc' ) { %> 
+                                <i class="fa-solid fa-sort-up"></i <% } else if (sortBy=='boolean' && order=='desc' ){ %>
+                                <i class="fa-solid fa-sort-down"></i <% } else { %> 
+                                <i class="fa-solid fa-sort"></i <% } %>>Boolean
+                            </a>
+                        </th>
+                        <th >Actions </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((item, index)=> { %>
+                        <tr>
+                            <div>
+                                <td>
+                                     <%=item.id %>
+                                </td>
+
+                                <td>
+                                    <%= item.string %>
+                                </td>
+                                <td>
+                                    <%= item.integer %>
+                                </td>
+                                <td>
+                                    <%= item.float %>
+                                </td>
+                                <td>
+                                    <%= moment(item.date).format('DD MMM YYYY'); %>
+                                </td>
+                                <td>
+                                    <%= item.boolean %>
+                                </td>
+                                <td>
+                                    <div class="d-grid gap-2 d-md-block">
+                                        <a class="btn btn-success" href="/edit/<%= item.id %>">Edit</a>
+                                        <a class="btn btn-danger" href="/delete/<%= item.id %>"
+                                            href="delete_methode_link"
+                                            onclick="return confirm('Are you sure you want to delete?');">Delete
+                                        </a>
+                                    </div>
+                                </td>
+                            </div>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link"
+                        href="<%= url.replace(`page=${page}`,`page=${previous}`) %>">Previous</a></li>
+                <% for(let i=1; i<=pages; i++){%>
+                    <li class="page-item"><a class="page-link <%= i == page ? ' active' : ''%>"
+                            href="<%= url.replace(`page=${page}`,`page=${i}`) %> ">
+                            <%= i %>
+                        </a></li>
+                    <% }%>
+                        <li class="page-item"><a class="page-link"
+                                href="<%= url.replace(`page=${page}`,`page=${next}`) %>">Next</a></li>
+            </ul>
+        </nav>
+
+        <div class="d-grid gap-2 d-md-block">
+            <a class="btn btn-primary" href="/add">Add</a>
+        </div>
+
+
+    </div>
+    <%- include('partials/footer') %>

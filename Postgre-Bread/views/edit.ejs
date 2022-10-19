@@ -1,0 +1,86 @@
+<%- include('partials/header') %>
+
+    <div>
+        <h2>Edit Data</h2>
+
+        <form action="" method="post">
+            <div class="row mb-3">
+                <div class="col-sm-2 col-form-label">
+                    <label for="id" >Id</label>
+                </div>
+                <div class="col-sm-10">
+                    <input class="form-control"  name="id" type="text" id="id" value="<%= item.id %>" disabled>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-2 col-form-label">
+                    <label for="string" >String</label>
+                </div>
+                <div class="col-sm-10">
+                    <input class="form-control"  name="string" type="text" id="string" value="<%= item.string %>"
+                        required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-2 col-form-label">
+                    <label for="integer" >Integer</label>
+                </div>
+                <div class="col-sm-10">
+
+                    <input class="form-control"  name="integer" type="number" id="integer" value="<%= item.integer %>"
+                        required>
+                </div>
+
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-2 col-form-label">
+                    <label for="float">Float</label>
+                </div>
+                <div class="col-sm-10">
+                    <input class="form-control" name="float" step="0.005" type="number" step="0.005" id="float"
+                        value="<%= item.float %>" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-2 col-form-label">
+                    <label for="date" >Date</label>
+                </div>
+                <div class="col-sm-10">
+                    <input class="form-control" name="date" type="date" id="date" 
+                        value="<%= moment(item.date).format('YYYY-MM-DD') %>">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-sm-2 col-form-label">
+                    <div class="col-sm-10">
+                        <label for="boolean" >Boolean</label>
+                    </div>
+                </div>
+                
+                    <div class="col-sm-10">
+                        <select class="form-control"  name="boolean"required>
+                            <option disabled selected> Choose Boolean... </option>
+                            <option value=true <%=item.boolean==1 ? 'selected' : '' %>>True</option>
+                            <option value=false <%=item.boolean==0 ? 'selected' : '' %>>False</option>
+                        </select>
+                    </div>
+                
+            </div>
+            
+
+            <div class="d-flex">
+
+                <button type="submit" class="btn btn-primary mr-2">Update</button>
+
+
+
+            </div>
+        </form>
+    </div>
+
+    <%- include('partials/footer') %>
