@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <title>SQL-BREAD</title>
+</head>
+
+<body class="BG">
+    <div class="container">
+        <form action="" method="get">
+            <h1>BREAD(Browse, Read, Edit, Add, Delete)</h1>
+            <div>
+                <h2 class="text-filter">Filters</h2>
+            </div>
+            <!-- =================FORM================= -->
+
+            <input type="hidden" name="page" value="1">
+            <div>
+            
+                <!-- ==========ID========= -->
+                <div class="checkbox">
+                    <input name="idFilters" type="checkbox" id="filters" <%=query.idFilters=='on' ? 'checked' : '' %>>
+                    <label for="idFilter">ID</label>
+                </div>
+                <div>
+                    <input class="input" name="id" type="text" placeholder=" ID " value="<%= query.id %>">
+                </div>
+
+                <!-- =========STRING========= -->
+                <div class="checkbox">
+                    <input name="stringFilters" type="checkbox" id="filters" <%=query.stringFilters=='on' ? 'checked' : '' %>>
+                    <label for="string">String</label>
+                </div>
+                <div>
+                    <input class="input" name="string" type="text" placeholder=" String " value="<%= query.string %>">
+                </div>
+
+                <!-- ==========INTEGER========= -->
+                <div class="checkbox">
+                    <input name="integerFilters" type="checkbox" id="filters" <%=query.integerFilters=='on' ? 'checked' : '' %>>
+                    <label for="integer">Integer</label>
+                </div>
+                <div>
+                    <input class="input" name="integer" type="number" placeholder=" Integer " id="integer"
+                        value="<%= query.integer %>">
+                </div>
+
+                <!--============FLOAT============= -->
+                <div class="checkbox">
+                    <input name="floatFilters" type="checkbox" <%=query.floatFilters=='on' ? 'checked' : '' %>>
+                    <label for="float">Float</label>
+                </div>
+                <div>
+                    <input class="input" name="float" type="number" step="0.05" placeholder="Float" value="<%= query.float %>">
+                </div>
+
+                <!-- ============DATE============ -->
+                <div class="checkbox">
+                    <input name="dateFilters" type="checkbox" <%=query.dateFilters=='on' ? 'checked' : '' %>>
+                    <label for="date">date</label>
+                </div>
+                <div>
+                    <input class="input-date" name="startDate" type="date" placeholder="start date" value="<%= query.startDate %>">
+                </div>
+                <p class="input-to">to</p>
+                <div>
+                    <input class="input-date" name="endDate" type="date" placeholder="end date" value="<%= query.endDate%>">
+                </div>
+
+                <!-- ===========BOOLEAN============= -->
+                <div class="checkbox">
+                    <input name="booleanFilters" type="checkbox" <%=query.booleanFilters=='on' ? 'checked' : '' %>>
+                    <label for="boolean">Boolean</label>
+                </div>
+                <div>
+                    <select class="input" name="boolean" id="filters">
+                        <option selected disabled> Choose Boolean...</option>
+                        <option value="true" <%=query.boolean=='true' ? 'selected' : '' %>>true</option>
+                        <option value="false" <%=query.boolean=='false' ? 'selected' : '' %>>false</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button class="button-search" type="submit">Search</button>
+            </div>
+            <a href="/">
+                <button class="button-reset" type="submit">Reset</button>
+            </a>
+        </form>
+
+        <!-- =============tabel================== -->
+        <div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>String</th>
+                        <th>Integer</th>
+                        <th>Float</th>
+                        <th>Date</th>
+                        <th>Boolean</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% data.forEach((item, index)=> { %>
+                        <tr>
+                            <div>
+                                <td>
+                                    <%= item.id %>
+                                </td>
+                                <td>
+                                    <%= item.string %>
+                                </td>
+                                <td>
+                                    <%= item.integer %>
+                                </td>
+                                <td>
+                                    <%= item.float %>
+                                </td>
+                                <td>
+                                    <%= moment(item.date).format('DD MMM YYYY'); %>
+                                </td>
+                                <td>
+                                    <%= item.boolean %>
+                                </td>
+                                <td>
+                                    <a href="/edit/<%= item.id %>"><button class="button-edit"> EDIT </button></a>
+                                    <a href="/delete/<%= item.id %>"  href="delete_methode_link" onclick="return confirm('Are you sure you want to Remove?');"></a>
+                                        <button class="button-delete"> DELETE </button></a>
+                                </td>
+                            </div>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination">
+            <a href="<%= url.replace(`page=${page}`,`page=${previous}`) %>">Previous</a>
+            <% for(let i=1; i<=pages; i++){%>
+                <a class="<%= i == page ? 'active' : ''%>" href="<%= url.replace(`page=${page}`,`page=${i}`) %>">
+                    <%= i %>
+                </a>
+                <% }%>
+                    <a href="<%= url.replace(`page=${page}`,`page=${next}`) %>">Next</a>
+        </div>
+        <div>
+            <button type="button" class="button-add"> <a href="/add">Add</a></button>
+        </div>
+    </div>
+</body>
+
+</html>

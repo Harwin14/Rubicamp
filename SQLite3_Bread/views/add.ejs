@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ADD</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body class="BG">
+    <div class="container">
+        <h1>Add Data</h1>
+        <form action=" " method="post">
+            <div class="edit">
+                <label class="id-edit" for="string">String</label>
+            </div>
+            <input class="input-add" type="text" name="string" id="string" placeholder=" String " required autofocus>
+
+            <div class="edit">
+                <label class="id-edit" for="integer">Integer</label>
+            </div>
+            <input class="input-add" type="number" name="integer" id="integer" placeholder=" Integer " required>  
+
+            <div class="edit">
+                <label class="id-edit" for="float">Float</label>
+            </div>
+            <input class="input-add"  type="number" step="0.05" name="float" id="float" placeholder="Float" required>
+
+            <div class="edit">
+                <label class="id-edit" for="date">Date</label>
+            </div>
+            <input class="input-add" type="date" name="date" id="date" >
+
+            <div class="edit">
+                <label class="id-edit" for="boolean" placeholder="Choose Boolean" >Boolean</label>
+            </div>
+            <select class="input-boole-add" name="boolean" id="boolean">
+                <option disabled selected> Choose the boolean ... </option>
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select>
+            <div> <button class="button-update" type="submit">Save</button> </div>
+
+
+        </form>
+    </div>
+</body>
+
+</html>

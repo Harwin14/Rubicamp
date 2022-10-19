@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EDIT</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body class="BG">
+    <div class="container">
+        <h1>Edit Data</h1>
+        <form action=" " method="post">
+            <div class="checkbox-edit">
+                <label for="id">ID</label>
+            </div>
+            <input class="input-edit-id" type="text" name="id" id="id" value="<%= item.id %>" disabled>
+
+            <div class="checkbox-edit">
+                <label for="string">String</label>
+            </div>
+            <input class="input-edit" type="text" name="string" id="string" value="<%= item.string %>">
+
+            <div class="checkbox-edit">
+                <label for="integer">Integer</label>
+            </div>
+            <input class="input-edit" type="number" name="integer" id="integer" value="<%= item.integer %>">
+
+            <div class="checkbox-edit">
+                <label for="float">Float</label>
+            </div>
+            <input class="input-edit" type="number" step="0.05" name="float" id="float" value="<%= item.float %>">
+
+            <div class="checkbox-edit">
+                <label for="date">Date</label>
+            </div>
+            <input class="input-edit"type="date" name="date" id="date" value="<%= item.date %>">
+
+            <div class="checkbox-edit">
+                <label for="boolean">Boolean</label>
+            </div>
+            <select class="input-boole-edit" name="boolean" id="boolean" value="<%=item.boolean%>">
+                <option value="true">true</option>
+                <option value="false">false</option>
+            </select>
+            <div> <button type="submit" class="button-update">Update</button></di v>
+        </form>
+    </div>
+</body>
+
+</html>
