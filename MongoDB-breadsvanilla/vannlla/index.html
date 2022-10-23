@@ -1,29 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Coba vanilla</title>
 </head>
+
 <body>
+
     <div class="container">
         <div class="card">
-            <div class="card-header">
-                
+            <div class="card-header text-center">
+                <h1>
+                    BREADS
+                </h1>
+                <h2>
+                    (Browse, Read, Edit, Add, Delete, Sort)
+                </h2>
             </div>
             <div class="card-body">
-                
+                <form action="" method="get">
+                    <input type="hidden" name="page" value="1">
+                    <div class="row mb-3 form-switch">
+                        <input class="form-check-input" type="checkbox" name="stringFilters">
+                        <label for="string" class="form-check-label col-sm-2">String</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="string" placeholder="String" value="">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 form-switch">
+                        <input class="form-check-input" type="checkbox" name="integerFilters">
+                        <label for="integer" class="form-check-label col-sm-2">Integer</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="integer" placeholder="Integer"
+                                value="<%= query.integer %>">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 form-switch">
+                        <input class="form-check-input" type="checkbox" name="floatFilters">
+                        <label for="float" class="form-check-label col-sm-2">Float</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="float" placeholder="Float" step="0.005"
+                                value="<%= query.float %>">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 form-switch">
+                        <input class="form-check-input" type="checkbox" name="dateFilters" <label for="date"
+                            class="form-check-label col-sm-2">Date</label>
+                        <div class="col-sm-3">
+                            <input type="date" class="form-control" name="startDate" placeholder="Date"
+                                value="<%=query.startDate%>">
+                            <label class="col-sm-2 col-form-label">to</label>
+                            <input type="date" class="form-control" name="endDate" placeholder="Date"
+                                value="<%= query.endDate %>">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3 form-switch">
+                        <input class="form-check-input" type="checkbox" name="booleanFilters">
+                        <label for="boolean" class="form-check-label col-sm-2">boolean</label>
+                        <div class="col-sm-10">
+                            <select id="boolean" name="boolean" class="form-select">
+                                <option value="" selected disabled>Choose Boolean ... </option>
+                                <option value=True>True</option>
+                                <option value=False>False</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 d-md-block">
+                        <button class="btn btn-primary " type="submit"><i class="fa-solid fa-magnifying-glass"
+                                title="Search"></i></button>
+                        <button class="btn btn-warning" type="submit" href="/"><i
+                                class="fa-sharp fa-solid fa-rotate-left" title="Reset"></i></button>
+                    </div>
+                </form>
             </div>
+
+            <table class="table table-striped card-body">
+                <thead class="thead">
+                    <tr>
+                        <th>
+                            No
+                        </th>
+
+                        <th>
+                            <a>string</a>
+
+                        </th>
+
+                        <th>
+                            <a>integer</a>
+                        </th>
+
+                        <th>
+                            <a>float</a>
+                        </th>
+
+                        <th>
+                            <a>date</a>
+                        </th>
+
+                        <th>
+                            <a>boolean</a>
+                        </th>
+
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            <div class="d-grid gap-2 d-md-block">
+                                <a class="btn btn-success" href=""><i class="fa-solid fa-pencil" title="Edit"></i></a>
+                                <a class="btn btn-danger" href="" href="delete_methode_link"
+                                    onclick="return confirm('Are you sure you want to delete?');"> <i
+                                        class="fa-solid fa-trash-can" title="Delete"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
             <div class="card-footer">
 
             </div>
-            
+
         </div>
 
 
     </div>
-    
+    <script>
+        const readData = () => {
+            fetch('http://localhost:3001/users')
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data)
+                })
+                .catch((err) => {
+                    alert('error  lagi')
+                })
+        }
+
+        readData()
+    </script>
+
 </body>
+
 </html>
