@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Harwin14/MongoDb-vanilla-breads.git"
+  },
+  "author": "harwin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harwin14/MongoDb-vanilla-breads/issues"
+  },
+  "homepage": "https://github.com/Harwin14/MongoDb-vanilla-breads#readme",
+  "dependencies": {
+    "serve": "^14.0.1"
+  }
+}
