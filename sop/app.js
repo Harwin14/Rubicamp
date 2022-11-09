@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var session = require('express-session')
 
 const { Pool} = require('pg')
 const pool = new Pool({
@@ -50,3 +51,6 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+//git push --set-upstream origin master
+// sudo kill -9 `sudo lsof -t -i:3000`
+//git push -f origin main
