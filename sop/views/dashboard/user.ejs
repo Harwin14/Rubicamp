@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>User id</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% rows.forEach((item, index) => { %>
+                <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= item.userid %></td>
+                    <td><%= item.email %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.role %></td>
+                </tr>
+                
+                <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<%- include('../partials/footer')%>
